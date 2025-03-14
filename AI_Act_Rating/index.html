@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU AI Act Rating</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 EU AI Act Konformitäts-Check</h1>
+        <p>Beantworte die Fragen, um dein KI-Projekt zu bewerten!</p>
+
+        <div id="questions">
+            <div class="question">
+                <label>📊 Verarbeitet dein KI-Modell persönliche Daten?</label>
+                <select id="q1">
+                    <option value="2">Ja</option>
+                    <option value="0">Nein</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>🔍 Hat dein Modell Transparenzmechanismen?</label>
+                <select id="q2">
+                    <option value="0">Ja</option>
+                    <option value="2">Nein</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>⚖ Wird Bias getestet?</label>
+                <select id="q3">
+                    <option value="0">Ja</option>
+                    <option value="2">Nein</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>⚠ Hochrisiko-Bereich (Medizin, Justiz)?</label>
+                <select id="q4">
+                    <option value="3">Ja</option>
+                    <option value="0">Nein</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>🔐 Erfüllt dein Modell Datenschutzrichtlinien?</label>
+                <select id="q5">
+                    <option value="0">Ja</option>
+                    <option value="3">Nein</option>
+                </select>
+            </div>
+
+            <div class="question">
+                <label>👨‍⚖ Gibt es menschliche Kontrolle?</label>
+                <select id="q6">
+                    <option value="0">Ja</option>
+                    <option value="3">Nein</option>
+                </select>
+            </div>
+
+            <button onclick="calculateScore()">📝 Bewertung berechnen</button>
+            <button onclick="resetForm()">🔄 Neu starten</button>
+        </div>
+
+        <h2>🔹 Bewertung:</h2>
+        <p id="result">Noch keine Bewertung.</p>
+
+             <h2>📊 Statistik</h2>
+        <canvas id="chart"></canvas>
+
+        <footer>
+            <p>© 2025 Created by Ertan Özcan</p>
+        </footer>
+
+                
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

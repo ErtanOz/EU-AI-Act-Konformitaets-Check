@@ -13,7 +13,7 @@
         <p>Beantworte die Fragen, um dein KI-Projekt zu bewerten!</p>
 
         <div id="questions">
-            <div class="question">
+            <div class="question" title="Verarbeitet das KI-Modell personenbezogene Daten? Dies kann ein Risikofaktor sein.">
                 <label>📊 Verarbeitet dein KI-Modell persönliche Daten?</label>
                 <select id="q1">
                     <option value="2">Ja</option>
@@ -21,7 +21,7 @@
                 </select>
             </div>
 
-            <div class="question">
+            <div class="question" title="Transparenz ist wichtig, um das Modell erklärbar zu machen.">
                 <label>🔍 Hat dein Modell Transparenzmechanismen?</label>
                 <select id="q2">
                     <option value="0">Ja</option>
@@ -29,7 +29,7 @@
                 </select>
             </div>
 
-            <div class="question">
+            <div class="question" title="Bias-Test hilft, Diskriminierung in KI-Modellen zu vermeiden.">
                 <label>⚖ Wird Bias getestet?</label>
                 <select id="q3">
                     <option value="0">Ja</option>
@@ -37,7 +37,7 @@
                 </select>
             </div>
 
-            <div class="question">
+            <div class="question" title="Hochrisiko-Bereiche erfordern besondere Sicherheitsmaßnahmen.">
                 <label>⚠ Hochrisiko-Bereich (Medizin, Justiz)?</label>
                 <select id="q4">
                     <option value="3">Ja</option>
@@ -45,7 +45,7 @@
                 </select>
             </div>
 
-            <div class="question">
+            <div class="question" title="Datenschutzrichtlinien sind essenziell für den Schutz der Nutzer.">
                 <label>🔐 Erfüllt dein Modell Datenschutzrichtlinien?</label>
                 <select id="q5">
                     <option value="0">Ja</option>
@@ -53,7 +53,7 @@
                 </select>
             </div>
 
-            <div class="question">
+            <div class="question" title="Menschliche Kontrolle hilft, Fehler zu minimieren.">
                 <label>👨‍⚖ Gibt es menschliche Kontrolle?</label>
                 <select id="q6">
                     <option value="0">Ja</option>
@@ -68,14 +68,12 @@
         <h2>🔹 Bewertung:</h2>
         <p id="result">Noch keine Bewertung.</p>
 
-             <h2>📊 Statistik</h2>
+        <h2>📊 Statistik</h2>
         <canvas id="chart"></canvas>
 
         <footer>
             <p>© 2025 Created by Ertan Özcan</p>
         </footer>
-
-                
     </div>
 
     <script src="script.js"></script>

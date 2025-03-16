@@ -22,13 +22,13 @@ function calculateScore() {
     resultElement.className = resultClass;
 
     updateChart(score);
+    saveSelections();
 }
 
 // Werte für Diagramm live aktualisieren
 function updateChart(score) {
     let ctx = document.getElementById("chart").getContext("2d");
 
-    // Falls Diagramm existiert, zerstören & neu erstellen
     if (chartInstance) {
         chartInstance.destroy();
     }
@@ -57,5 +57,39 @@ function getScore() {
     return [...document.querySelectorAll("select")].reduce((sum, el) => sum + parseInt(el.value), 0);
 }
 
-// Sicherstellen, dass Chart beim Start gerendert wird
-document.addEventListener("DOMContentLoaded", () => updateChart(0));
+// Speichert die Auswahl des Nutzers im localStorage
+function saveSelections() {
+    let selections = {};
+    document.querySelectorAll("select").forEach(select => {
+        selections[select.id] = select.value;
+    });
+    localStorage.setItem("userSelections", JSON.stringify(selections));
+}
+
+// Lädt gespeicherte Auswahl beim Start
+function loadSelections() {
+    let selections = JSON.parse(localStorage.getItem("userSelections"));
+    if (selections) {
+        document.querySelectorAll("select").forEach(select => {
+            if (selections[select.id]) {
+                select.value = selections[select.id];
+            }
+        });
+    }
+    calculateScore();
+}
+
+// Reset-Funktion
+function resetForm() {
+    document.querySelectorAll("select").forEach(select => {
+        select.value = "0";
+    });
+    localStorage.removeItem("userSelections");
+    calculateScore();
+}
+
+// Sicherstellen, dass Chart und gespeicherte Daten geladen werden
+document.addEventListener("DOMContentLoaded", () => {
+    loadSelections();
+    updateChart(0);
+});

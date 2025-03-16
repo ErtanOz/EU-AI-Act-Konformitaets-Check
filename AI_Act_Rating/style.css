@@ -10,7 +10,6 @@ body {
 }
 
 .container {
-    width: 80%;
     max-width: 600px;
     background: #29294b;
     padding: 20px;

@@ -66,12 +66,11 @@ button:hover {
     border-radius: 10px;
 }
 
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    color: #bbb;
-    background: #222;
-    border-radius: 5px;
+footer a {
+    color: orange;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff6600; /* Dunkleres Orange beim Hover */
 }
